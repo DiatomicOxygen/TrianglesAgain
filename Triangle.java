@@ -1,13 +1,16 @@
 public class Triangle {
 
+  //Points
   private Point v1, v2, v3;
 
+  //helper method
   public static double round(double n, int place) {
     //rounds a number to a select place
     double answer = (int)(n * place + .5);
     return (double)answer / place;
   }
 
+  //Methods for part B
   public Triangle(Point a, Point b, Point c) {
     v1 = a;
     v2 = b;
@@ -20,6 +23,7 @@ public class Triangle {
     v3 = new Point (x3, y3);
   }
 
+  //Methods for part C
   public double getPerimeter() {
     return v1.distanceTo(v2) + v2.distanceTo(v3) + v3.distanceTo(v1);
   }

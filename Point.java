@@ -24,10 +24,12 @@ public class Point{
     return y;
   }
 
+  //2.3 a method
   public double distanceTo(Point other) {
     return Math.sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
   }
 
+  //2.3 b method
   public boolean equals(Point other) {
     return (x == other.x && y == other.y);
   }
