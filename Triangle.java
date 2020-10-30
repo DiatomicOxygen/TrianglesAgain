@@ -2,6 +2,12 @@ public class Triangle {
 
   private Point v1, v2, v3;
 
+  public static double round(double n, int place) {
+    //rounds a number to a select place
+    double answer = (int)(n * place + .5);
+    return (double)answer / place;
+  }
+
   public Triangle(Point a, Point b, Point c) {
     v1 = a;
     v2 = b;
@@ -18,5 +24,12 @@ public class Triangle {
     return v1.distanceTo(v2) + v2.distanceTo(v3) + v3.distanceTo(v1);
   }
 
-  
+  public double getArea() {
+    double s = getPerimeter()/2;
+    double a = v1.distanceTo(v2);
+    double b = v2.distanceTo(v3);
+    double c = v3.distanceTo(v1);
+    double result =  Math.sqrt(s * (s-a) * (s-b) * (s-c));
+    return round(result,10000);
+  }
 }
