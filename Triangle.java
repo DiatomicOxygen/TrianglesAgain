@@ -32,4 +32,18 @@ public class Triangle {
     double result =  Math.sqrt(s * (s-a) * (s-b) * (s-c));
     return round(result,10000);
   }
+
+  public String classify() {
+    double a = round(v1.distanceTo(v2),1000);
+    double b = round(v2.distanceTo(v3),1000);
+    double c = round(v3.distanceTo(v1),1000);
+    if (a == b || b == c || a == c) {
+        if (a == b && b == c) {
+          return "equilateral";
+        }
+        return "isosceles";
+      }
+    return "scalene";
+  }
+
 }
